@@ -47,7 +47,6 @@ let overlays = {
   "Tectonic Plates": allPlates,
   "Earthquakes": allEarthquakes,
   "Major Earthquakes": majorEQ
-
 };
 
 // Then we add a control to the map that will allow the user to change which
@@ -86,7 +85,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     if (magnitude > 2) {
       return "#eecc00";
     }
-    if (magnitude > 1) {
+    if (magnitude > 1) {   
       return "#d4ee00";
     }
     return "#98ee00";
@@ -116,6 +115,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
       layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     }
   }).addTo(allEarthquakes);
+
+  // Then we add the earthquake layer to our map.
+  allEarthquakes.addTo(map);
 
   // 3. Retrieve the major earthquake GeoJSON data >4.5 mag for the week.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson").then(function(data) {
