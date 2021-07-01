@@ -24,8 +24,8 @@ let dark = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{
 
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
-	center: [40.7, -94.5],
-	zoom: 3,
+	center: [10.7, 10.5],
+	zoom: 2,
 	layers: [streets]
 });
 
@@ -50,8 +50,11 @@ let overlays = {
 };
 
 // Then we add a control to the map that will allow the user to change which
-// layers are visible.
-L.control.layers(baseMaps, overlays).addTo(map);
+// // layers are visible.
+// L.control.layers(baseMaps, overlays).addTo(map);
+L.control.layers(baseMaps, overlays, {
+  collapsed: false
+}).addTo(map);
 
 // Retrieve the earthquake GeoJSON data.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
@@ -113,7 +116,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
       // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Epoch Time: </b>" + feature.properties.time + "<br>" + '<a href = "https://www.epochconverter.com/" target="_blank">Epoch Time Converter</a>' + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
+      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
     }
   }).addTo(allEarthquakes);
 
@@ -170,7 +173,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
    //  after the marker has been created and styled.
    onEachFeature: function(feature, layer) {
     // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-    layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Epoch Time: </b>" + feature.properties.time + "<br>" + '<a href = "https://www.epochconverter.com/" target="_blank">Epoch Time Converter</a>' + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
+    layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
 
   }
   // Close the braces and parentheses for the major earthquake data.
