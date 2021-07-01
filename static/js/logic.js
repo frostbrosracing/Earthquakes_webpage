@@ -128,7 +128,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
       // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Latitude, Longitude, Depth (in km.): </b>" + feature.geometry.coordinates);
+      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Longitude, Latitude, Depth (in km.): </b>" + feature.geometry.coordinates);
     }
   }).addTo(allEarthquakes);
 
@@ -195,7 +195,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojs
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
       // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Latitude, Longitude, Depth (in km.): </b>" + feature.geometry.coordinates);
+      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Longitude, Latitude, Depth (in km.): </b>" + feature.geometry.coordinates);
     }
   }).addTo(allEarthquakesDay);
 
@@ -252,7 +252,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
    //  after the marker has been created and styled.
    onEachFeature: function(feature, layer) {
     // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-    layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Latitude, Longitude, Depth (in km.): </b>" + feature.geometry.coordinates);
+    layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Longitude, Latitude, Depth (in km.): </b>" + feature.geometry.coordinates);
 
   }
   // Close the braces and parentheses for the major earthquake data.
@@ -322,7 +322,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
       // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
-      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Latitude, Longitude, Depth (in km.): </b>" + feature.geometry.coordinates);
+      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Date/Time: </b>" + new Date(feature.properties.time) + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place + "<br><b>Longitude, Latitude, Depth (in km.): </b>" + feature.geometry.coordinates);
     }
   }).addTo(allEarthquakesMonth);
 
