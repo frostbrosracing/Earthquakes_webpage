@@ -112,7 +112,8 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
      // We create a popup for each circleMarker to display the magnitude and location of the earthquake
      //  after the marker has been created and styled.
      onEachFeature: function(feature, layer) {
-      layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+      // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+      layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Epoch Time: </b>" + feature.properties.time + "<br>" + '<a href = "https://www.epochconverter.com/" target="_blank">Epoch Time Converter</a>' + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
     }
   }).addTo(allEarthquakes);
 
@@ -168,7 +169,9 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
    // We create a popup for each circleMarker to display the magnitude and location of the earthquake
    //  after the marker has been created and styled.
    onEachFeature: function(feature, layer) {
-    layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+    // layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
+    layer.bindPopup("<h2>Earthquake Information</h2>" + "<b>Epoch Time: </b>" + feature.properties.time + "<br>" + '<a href = "https://www.epochconverter.com/" target="_blank">Epoch Time Converter</a>' + "<br><b>Magnitude: </b>" + feature.properties.mag + "<br><b>Location: </b>" + feature.properties.place);
+
   }
   // Close the braces and parentheses for the major earthquake data.
   }).addTo(majorEQ);
