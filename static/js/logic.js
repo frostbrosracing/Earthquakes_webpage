@@ -31,9 +31,9 @@ let light = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles
 
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
-	center: [-15, 0],
-	zoom: 2.2,
-	layers: [light]
+	center: [37, 38],
+	zoom: 7.5,
+	layers: [satelliteStreets]
 });
 
 // Create a base layer that holds all three maps.
@@ -70,7 +70,7 @@ let overlays = {
 // // layers are visible.
 // L.control.layers(baseMaps, overlays).addTo(map);
 L.control.layers(baseMaps, overlays, {
-  collapsed: false
+  collapsed: true
 }).addTo(map);
 
 // Retrieve the earthquake GeoJSON data.
@@ -343,7 +343,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
   }).addTo(majorEQ);
 
   // Then we add the earthquake layer to our map.
-  // majorEQ.addTo(map);
+  majorEQ.addTo(map);
 
   // 3. Retrieve the major earthquake GeoJSON data >4.5 mag for the week.
   d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.geojson").then(function(data) {
@@ -520,7 +520,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
         style: myStyle})
       .addTo(allPlates);
     });
-      // allPlates.addTo(map);
+      allPlates.addTo(map);
     })
   })
 })
